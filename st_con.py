@@ -76,7 +76,6 @@ class SmartThingsCon:
 
     def read_response(self, resp):
         print(resp)
-        print(resp['headers']['interactionType'])
 
         interaction_type = resp['headers']['interactionType']
 
@@ -172,7 +171,7 @@ class SmartThingsCon:
                         "deviceContext" : {
                             "roomName": "Kitchen",
                             "groups": ["Hall Lights"],
-                            "categories": ["Others"]
+                            "categories": ["MultiFunctionalSensor"]
                         },
                         "deviceHandlerType": self.deviceProfileID,
                         "deviceUniqueId": "unique identifier of device"

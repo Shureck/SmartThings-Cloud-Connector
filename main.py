@@ -21,18 +21,13 @@ from fastapi import FastAPI, HTTPException
 
 app = FastAPI()
 
-@app.get("/iot/test")
-async def ffff(temp:int, hum:int):
-      st.send_temp_hum(temp,hum)
-
-@app.get("/iot/test_btn")
+@app.get("/<username>/test_btn")
 async def ffff(state):
       st.send_btn(state)
 
-@app.post("/iot")
+@app.post("/<username>")
 async def show_body(data = Body()):
     body_content = data
     type, tt = st.read_response(data)
-    print(type)
 
     return tt
